@@ -1,17 +1,17 @@
 import React from "react";
+import s from "./Star.module.css"
+
 
 type StarProps = {
     selected: boolean
+    value: 1 | 2 | 3 | 4 | 5
+    setValue: (value: 1 | 2 | 3 | 4 | 5) => void
 }
 
 export function Star(props: StarProps) {
-    if (props.selected === true) {
-        return (
-            <span><b>* </b></span>
-        )
-    }
     return (
-        <span>* </span>
-
+        <span className={s.star} onClick={() => props.setValue(props.value)}>
+        {props.selected ? <b>* </b> : "* "}
+    </span>
     )
 }

@@ -1,14 +1,14 @@
 import React, {useState} from 'react'
-import {SelfControledOnOff} from "./SelfControledOnOf";
+import {SelfRating} from "./SelfRating";
 
 
 
 export default {
-    title: 'SelfControledOnOff',
-    component: SelfControledOnOff,
+    title: 'SelfRating',
+    component: SelfRating,
 }
 
 
-export const OnOffChanging = () => {
-    return <SelfControledOnOff/>;
+export const RatingChanging = () => {
+    return <SelfRating/>;
 }

@@ -3,14 +3,15 @@ import {AccordionTitle} from "./AccordionTitle/AccordionTitle";
 import {AccordionBody} from "./AccordionBody/AccordioBody";
 
 
-
-export function Accordion() {
-    let [collaps, setCollaps] = useState(false)
+type SelfAccordionProps = {
+    title: string
+}
+export function SelfAccordion(props:SelfAccordionProps) {
+    let [collapsed, setCollapsed] = useState(false)
     return (
         <div>
-            <AccordionTitle/>
-            <button onClick={() => {setCollaps(!collaps)}}>toggle</button>
-            {collaps && <AccordionBody/>}
+            <AccordionTitle title={props.title} onClick={() => {setCollapsed(!collapsed)}}/>
+            {collapsed && <AccordionBody/>}
         </div>
     )
 }

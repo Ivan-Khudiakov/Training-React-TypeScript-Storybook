@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import s from './OnOffBtn.module.css'
 
-export function UncontroledOnOff() {
+export function SelfControledOnOff() {
     let [on, setOn] = useState(false)
 
     const onStyle = {

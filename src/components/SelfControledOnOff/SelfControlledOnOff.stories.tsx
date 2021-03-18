@@ -1,18 +1,14 @@
 import React, {useState} from 'react'
-import {action} from '@storybook/addon-actions'
-import {OnOff} from "./OnOff";
+import {SelfControledOnOff} from "./SelfControledOnOf";
+
 
 
 export default {
-    title: 'OnOff',
-    component: OnOff,
+    title: 'SelfControledOnOff',
+    component: SelfControledOnOff,
 }
 
-const callback = action('On or Off')
 
-export const OnMode = () => <OnOff on={true} onClick={x=>x}/>;
-export const OffMode = () => <OnOff on={false} onClick={x=>x}/>;
-export const ModChanging = () => {
-    let [on, setOn] = useState(true)
-    return <OnOff on={on} onClick={() => setOn(!on)}/>;
+export const OnOffChanging = () => {
+    return <SelfControledOnOff/>;
 }

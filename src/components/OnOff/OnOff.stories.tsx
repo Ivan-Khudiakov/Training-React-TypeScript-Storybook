@@ -1,18 +1,18 @@
 import React, {useState} from 'react'
 import {action} from '@storybook/addon-actions'
-import {Accordion} from "./Accordion";
+import {OnOff} from "./OnOff";
 
 
 export default {
-    title: 'Accordion',
-    component: Accordion,
+    title: 'OnOff',
+    component: OnOff,
 }
 
-const callback = action('Accordion on')
+const callback = action('On or Off')
 
-export const AccordionCollapsed = () => <Accordion onClick={x=>x} collapsed={true}  title={'Menu'}/>;
-export const AccordionUnCollapsed = () => <Accordion onClick={x=>x} collapsed={false}  title={'Users'}/>;
+export const OnMode = () => <OnOff on={true} onClick={x=>x}/>;
+export const OffMode = () => <OnOff on={false} onClick={x=>x}/>;
 export const ModChanging = () => {
-    let [collapsed, setCollapsed] = useState(true)
-    return <Accordion onClick={() => setCollapsed(!collapsed)} collapsed={collapsed}  title={'Menu'}/>;
+    let [on, setOn] = useState(true)
+    return <OnOff on={on} onClick={() => setOn(!on)}/>;
 }

@@ -1,8 +1,9 @@
 import React from "react";
 
-type AccordionTitleProps ={
+type AccordionTitleProps = {
     title: string
+    onClick: () => void
 }
 export function AccordionTitle(props:AccordionTitleProps) {
-    return <h3>{props.title}</h3>
+    return <h3 onClick={() => {props.onClick()}}>{props.title}</h3>
 }
