@@ -9,13 +9,32 @@ export default {
     component: Select,
 }
 
-export const CustomSelectWithValue = () =>
-        <Select onChange={action("Value changed")}
-                items={[{value: "1", title: "Moscow"}, {value: "2", title: "Kiev"}, {value: "3", title: "Minsk"}, {value: "4", title: "London"}]}
-                value={"2"}
-        />;
+export const CustomSelectWithValue = () => {
+    const [value, setValue] = useState("2")
+    return (
+        <Select onChange={setValue}
+                value={value}
+                items={[
+                    {value: "1", title: "Moscow"},
+                    {value: "2", title: "Kiev"},
+                    {value: "3", title: "Minsk"},
+                    {value: "4", title: "London"}
+                    ]}
+        />
+    )
+}
+export const CustomSelectWithoutValue = () => {
+    const [value, setValue] = useState(null)
+    return (
+        <Select onChange={setValue}
+                value={value}
+                items={[
+                    {value: "1", title: "Moscow"},
+                    {value: "2", title: "Kiev"},
+                    {value: "3", title: "Minsk"},
+                    {value: "4", title: "London"}
+                ]}
+        />
+    )
+}
 
-export const CustomSelectWithoutValue = () =>
-    <Select onChange={action("Value changed")}
-            items={[{value: "1", title: "Moscow"}, {value: "2", title: "Kiev"}, {value: "3", title: "Minsk"}, {value: "4", title: "London"}]}
-    />;
