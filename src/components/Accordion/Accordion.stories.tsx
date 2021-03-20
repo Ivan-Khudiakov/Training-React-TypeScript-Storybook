@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {action} from '@storybook/addon-actions'
+
 import {Accordion} from "./Accordion";
 
 
@@ -8,7 +8,7 @@ export default {
     component: Accordion,
 }
 
-const callback = action(`Item clicked`)
+
 
 // export const AccordionCollapsed = () => <Accordion onClick={callback} collapsed={true}  title={'Menu'}/>;
 // export const AccordionUnCollapsed = () => <Accordion onClick={x=>x} collapsed={false}  title={'Users'}/>;
