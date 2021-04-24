@@ -1,11 +1,14 @@
 import React, {useEffect, useState} from "react"
+import {DigitalClock} from "./DigitalClock";
+import {AnalogClock} from "./AnalogClock";
 
 
 type PropsType ={
-
+ mode: "digital" | "analog"
 }
-
-let plusZero = (number: number) => number < 10 ? "0" + number : number
+export type ClockPropsType = {
+    date: Date
+}
 
 export const Clock: React.FC<PropsType> = (props) => {
     let [date, setDate] = useState(new Date())
@@ -24,11 +27,16 @@ export const Clock: React.FC<PropsType> = (props) => {
 
     return (
         <div>
-            <span>{date.getHours()}</span>
-            :
-            <span>{plusZero(date.getMinutes())}</span>
-            :
-            <span>{plusZero(date.getSeconds())}</span>
+            {
+                props.mode === "digital"
+                    ? <DigitalClock date={date}/>
+                    : <AnalogClock date={date}/>
+            }
+
         </div>
     )
 }
+
+
+
+
